@@ -1,0 +1,13 @@
+<div style="width:40%; margin:auto; border:2px solid black;">
+  <p *ngIf="alrt" style="color:red"> You can only book upto 7 seats at once</p>
+
+<p style="text-align:center ;">B1</p>
+
+<div style=" pading:2px ; display: grid;   grid-template-columns: auto auto auto AUTO;" >
+  <div *ngFor="let seat of seats" style="border:2px solid black;  width:90%; height:60px; margin:2px; text-align:center;align-items:center;color:black; 
+  "   (click)="selected(seat.number)"     [ngClass]="(seat.isBooked)?'red':(seat.isSelected)?'blue':'green'"
+  > <p style="margin-top:20px">{{seat?.number}}</p> </div>
+
+</div>
+<button (click)="book()">Book</button>
+</div>
